@@ -7,9 +7,9 @@
 // platform: String
 
 
-const mongoose = require('mongoose');
+import {Schema, model} from 'mongoose';
 
-const gameSchema = new mongoose.Schema({
+const gameSchema = new Schema({
   gameTitle: { 
     type: String, 
     required: true 
@@ -28,6 +28,5 @@ const gameSchema = new mongoose.Schema({
   // lastAccessed: { type: Date, default: Date.now },
 });
 
-const Game = mongoose.model('Game', gameSchema);
-
-module.exports = Game;
+const Game = model('Game', gameSchema);
+export default Game;

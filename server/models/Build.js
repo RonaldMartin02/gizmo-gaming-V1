@@ -9,8 +9,7 @@
 // buildStats: {Object}
 // statName: String
 // statValue: String
-
-const { Schema, model } = require('mongoose');
+import {Schema, model} from 'mongoose';
 
 const commentSchema = new Schema({
   commentBody: {
@@ -73,4 +72,4 @@ const buildSchema = new Schema({
 
 const Build = model('Build', buildSchema);
 
-module.exports = Build;
+export default Build;

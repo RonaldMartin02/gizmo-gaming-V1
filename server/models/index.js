@@ -1,7 +1,7 @@
-const Game = require('./Game');
-const User = require('./User');
-const Build = require('./Build');
-const Tag = require('./Tag');
+import Game from './Game.js';
+import User from './User.js';
+import Build from './Build.js';
+import Tag from './Tag.js';
 
 
-module.exports = { Game, User, Build, Comment, Tag };
+export default { Game, User, Build, Tag };
