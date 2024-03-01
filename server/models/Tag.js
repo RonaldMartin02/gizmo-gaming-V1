@@ -2,13 +2,13 @@
 // tagName: String
 // tagType: String (gameTitle, esrb, genre, postRating)
 
-const mongoose = require('mongoose');
+import {Schema, model} from 'mongoose';
 
-const tagSchema = new mongoose.Schema({
+const tagSchema = new Schema({
   tagName: { type: String, required: true },
   tagType: { type: String, required: true },
 });
 
-const Tag = mongoose.model('Tag', tagSchema);
+const Tag = model('Tag', tagSchema);
 
-module.exports = Tag;
+export default Tag;
