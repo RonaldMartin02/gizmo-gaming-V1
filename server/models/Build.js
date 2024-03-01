@@ -12,6 +12,36 @@
 
 const { Schema, model } = require('mongoose');
 
+const commentSchema = new Schema({
+  commentBody: {
+     type: String,
+     required: true 
+},
+  commentDate: {
+     type: Date,
+     default: Date.now 
+},
+  commentUser: {
+     type: String,
+     required: true
+ },
+  buildId: {
+     type: String,
+     required: true
+ },
+});
+
+const buildStatsSchema = new Schema({
+    statName: {
+        type: String,
+        required: true
+    },
+    statValue: {
+        type: String,
+        required: true
+    }
+    });
+
 const buildSchema = new Schema({
   postTitle: {
     type: String,
@@ -37,14 +67,8 @@ const buildSchema = new Schema({
     type: Number,
     required: false
   },
-  postComments: {
-    type: Array,
-    required: false
-  },
-  buildStats: {
-    type: Object,
-    required: false
-  },
+  postComments: [commentSchema],
+  buildStats: [buildStatsSchema],
 });
 
 const Build = model('Build', buildSchema);
