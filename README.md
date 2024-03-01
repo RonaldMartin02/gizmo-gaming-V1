@@ -5,7 +5,7 @@
   </br>
   ## Description
   
-  This application is 
+  This application is built to provide a social platform for gamers specifically. Our goal is to help make new gamers, or even veteran gamers who are looking to get into a new game. 
   </br>
   </br>
   </br>
