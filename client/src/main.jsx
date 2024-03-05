@@ -11,6 +11,7 @@ import Build from './pages/Build'
 import Createbuild from './pages/Createbuild'
 import Aboutus from './pages/Aboutus'
 import ErrorPage from './pages/ErrorPage'
+import LogIn from './pages/LogIn';
 
 const router = createBrowserRouter(
   [
@@ -38,6 +39,10 @@ const router = createBrowserRouter(
       {
         path: 'Build/create',
         element: <Createbuild />,
+      },
+      {
+        path: 'LogIn',
+        element: <LogIn />,
       },
     ],
     },
