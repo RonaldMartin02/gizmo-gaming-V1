@@ -5,7 +5,12 @@ import './index.scss'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import Home from './pages/Home'
+import Landing from './pages/Landing'
+import Search from './pages/Search'
+import Build from './pages/Build'
+import Createbuild from './pages/Createbuild'
+import Aboutus from './pages/Aboutus'
+import ErrorPage from './pages/ErrorPage'
 
 const router = createBrowserRouter(
   [
@@ -15,20 +20,24 @@ const router = createBrowserRouter(
     children: [
       {
         index: true,
-        path: '/',
-        element: <Home />,
+        path: '/Landing',
+        element: <Landing/>,
       },
       {
-        path: 'Portfolio',
-        element: <Portfolio />,
+        path: 'AboutUs',
+        element: <Aboutus />,
       },
       {
-        path: 'Contact',
-        element: <Contact />,
+        path: 'Search',
+        element: <Search />,
       },
       {
-        path: 'Resume',
-        element: <Resume />,
+        path: 'Build',
+        element: <Build />,
+      },
+      {
+        path: 'Build/create',
+        element: <Createbuild />,
       },
     ],
     },
