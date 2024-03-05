@@ -1,7 +1,7 @@
-import {User, Game, Build} from '../models/index.js';
-//Build thoughing error "SyntaxError: The requested module '../models/index.js' does not provide an export named 'Build'"
-import {signToken, AuthenticationError} from '../utils/auth.js';
-//authenticationError is thoughing a error " SyntaxError: The requested module '../utils/auth.js' does not provide an export named 'AuthenticationError' "
+const {User, Game, Build} = require('../models/index');
+//Build throwing error "SyntaxError: The requested module '../models/index.js' does not provide an export named 'Build'"
+const {signToken, AuthenticationError} = require('../utils/auth');
+//authenticationError is throwing a error " SyntaxError: The requested module '../utils/auth.js' does not provide an export named 'AuthenticationError' "
 
 const resolvers = {
     Query: {
@@ -45,4 +45,4 @@ const resolvers = {
     },
 };
 
-export default resolvers;
+module.exports = resolvers;
