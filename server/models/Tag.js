@@ -2,7 +2,7 @@
 // tagName: String
 // tagType: String (gameTitle, esrb, genre, postRating)
 
-import {Schema, model} from 'mongoose';
+const {Schema, model} = require('mongoose');
 
 const tagSchema = new Schema({
   tagName: { type: String, required: true },
@@ -11,4 +11,4 @@ const tagSchema = new Schema({
 
 const Tag = model('Tag', tagSchema);
 
-export default Tag;
+module.exports = Tag;

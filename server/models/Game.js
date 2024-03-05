@@ -7,7 +7,7 @@
 // platform: String
 
 
-import {Schema, model} from 'mongoose';
+const {Schema, model} = require('mongoose');
 
 const gameSchema = new Schema({
   gameTitle: { 
@@ -29,4 +29,4 @@ const gameSchema = new Schema({
 });
 
 const Game = model('Game', gameSchema);
-export default Game;
+module.exports = Game;
