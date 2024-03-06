@@ -12,6 +12,7 @@ import Createbuild from './pages/Createbuild'
 import Aboutus from './pages/Aboutus'
 import ErrorPage from './pages/ErrorPage'
 import LogIn from './pages/LogIn';
+import Signup from './pages/SignUp';
 
 const router = createBrowserRouter(
   [
@@ -21,29 +22,33 @@ const router = createBrowserRouter(
     children: [
       {
         index: true,
-        path: '/Landing',
         element: <Landing/>,
       },
       {
-        path: 'AboutUs',
+        path: '/AboutUs',
         element: <Aboutus />,
       },
       {
-        path: 'Search',
+        path: '/Search',
         element: <Search />,
       },
       {
-        path: 'Build',
+        path: '/Build',
         element: <Build />,
       },
       {
-        path: 'Build/create',
+        path: '/Build/create',
         element: <Createbuild />,
       },
       {
-        path: 'LogIn',
+        path: '/LogIn',
         element: <LogIn />,
       },
+      {
+        path: '/SignUp',
+        element: <Signup />,
+      }
+
     ],
     },
   ]
