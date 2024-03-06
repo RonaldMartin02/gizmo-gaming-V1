@@ -9,39 +9,47 @@
 // buildStats: {Object}
 // statName: String
 // statValue: String
-const {Schema, model} = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const commentSchema = new Schema({
+  // id: {
+  //   type: Number,
+  //   required: true
+  // },
   commentBody: {
-     type: String,
-     required: true 
-},
+    type: String,
+    required: true
+  },
   commentDate: {
-     type: Date,
-     default: Date.now 
-},
+    type: Date,
+    default: Date.now
+  },
   commentUser: {
-     type: String,
-     required: true
- },
+    type: String,
+    required: true
+  },
   buildId: {
-     type: String,
-     required: true
- },
+    type: String,
+    required: true
+  },
 });
 
 const buildStatsSchema = new Schema({
-    statName: {
-        type: String,
-        required: true
-    },
-    statValue: {
-        type: String,
-        required: true
-    }
-    });
+  statName: {
+    type: String,
+    required: true
+  },
+  statValue: {
+    type: String,
+    required: true
+  }
+});
 
 const buildSchema = new Schema({
+  // id: {
+  //   type: Number,
+  //   required: true
+  // },
   postTitle: {
     type: String,
     required: true
