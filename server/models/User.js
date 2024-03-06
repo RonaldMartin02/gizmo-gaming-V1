@@ -5,9 +5,14 @@
 // joinDate: Date
 // lastAccessed: Date
 // buildPosts: Array
+const Bcrypt = require('bcrypt');
 const {Schema, model} = require('mongoose');
 
 const userSchema = new Schema({
+  // id: {
+  //   type: Number,
+  //   required: true
+  // },
   username: { 
     type: String, 
     required: true 
@@ -18,7 +23,10 @@ const userSchema = new Schema({
   },
   password: { 
     type: String, 
-    required: true 
+    required: true, 
+    // minLength: 8,
+    // maxLength: 32,
+    // match: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/
   },
   joinDate: { 
     type: Date, 
@@ -31,6 +39,19 @@ const userSchema = new Schema({
   },
 });
 
+userSchema.pre('save', async function(next) {
+  if (this.isNew || this.isModified('password')) {
+    const saltRounds = 10;
+    this.password = await Bcrypt.hash(this.password, saltRounds);
+  }
+  next();
+}
+);
+
+userSchema.methods.isCorrectPassword = async function(password) {
+  return Bcrypt.compare(password, this.password);
+}
+
 const User = model('User', userSchema);
 
-module.export = User;
+module.exports = User;
