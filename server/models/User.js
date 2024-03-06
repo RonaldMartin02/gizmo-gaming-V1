@@ -19,14 +19,13 @@ const userSchema = new Schema({
   },
   email: { 
     type: String, 
-    required: true 
+    required: true,
+    unique: true,
+    match: [/.+@.+\..+/, 'Please enter a valid e-mail address']
   },
   password: { 
     type: String, 
     required: true, 
-    // minLength: 8,
-    // maxLength: 32,
-    // match: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/
   },
   joinDate: { 
     type: Date, 
