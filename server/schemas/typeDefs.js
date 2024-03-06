@@ -1,40 +1,71 @@
 const typeDefs = `#graphql
-        type Game {
-        _id: ID
-        gameTitle: String
-        genre: String
-        esrb: String
-    }
     type User {
         _id: ID
         username: String
         email: String
         password: String
+        builds: [Build]!
+    } 
+     type Game {
+        _id: ID
+        gameTitle: String
+        genre: String
+        esrb: String
     }
+  
     type Build {
         _id: ID
         postTitle: String
         postBody: String
         buildGenre: String
-        postUser: String
+        postUser: User
+        game: Game!
+        comments: [Comment]!
+    }
+    type Comment {
+        _id: ID
+        commentBody: String
+        commentUser: User
+        createdAt: String
     }
     type Auth {
-    token: ID!
-    user: User
+        token: ID!
+        user: User
     }
     type Query {
+        # games
         games: [Game]
         game(id: ID): Game
+        # builds
         builds: [Build]
         build(id: ID): Build
+        # users
         users: [User]
         user(id: ID): User
     }
     type Mutation {
-        login(email: String!): Auth
-        addGame(gameTitle: String!, genre: String!, esrb: String!): Game
+        #Sign up(addUser) and login
         addUser(username: String!, email: String!, password: String!): User
-        addBuild(postTitle: String!, postBody: String!, buildGenre: String!, postUser: String!): Build
+        login(email: String!): Auth
+
+        addGame(
+            gameTitle: String!,
+             genre: String!,
+              esrb: String!
+              ): Game
+        addBuild(
+            postTitle: String!, 
+            postBody: String!, 
+            buildGenre: String!, 
+            postUser: String!
+            ): Build
+        addComment(
+            buildId: ID!, 
+            commentBody: String!
+            ): Build
+
+        removeBuild(buildId: ID!): Build
+        removeComment(buildId: ID!, commentId: ID!): Build
     }
 `;
 
