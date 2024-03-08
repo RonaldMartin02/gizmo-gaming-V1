@@ -34,8 +34,8 @@ const typeDefs = `#graphql
     }
     type Query {
         # games
-        games: [Game]
-        game(id: ID): Game
+        # games: [Game]
+        # game(id: ID): Game
         # builds
         builds: [Build]
         build(id: ID): Build
@@ -48,11 +48,11 @@ const typeDefs = `#graphql
         addUser(username: String!, email: String!, password: String!): User
         login(email: String!): Auth
 
-        addGame(
-            gameTitle: String!,
-             genre: String!,
-              esrb: String!
-              ): Game
+        # addGame(
+        #     gameTitle: String!,
+        #      genre: String!,
+        #       esrb: String!
+        #       ): Game
         addBuild(
             postTitle: String!, 
             postBody: String!, 
