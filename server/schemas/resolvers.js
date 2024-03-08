@@ -1,7 +1,6 @@
-const { User, Game, Build } = require('../models/index');
-//Build throwing error "SyntaxError: The requested module '../models/index.js' does not provide an export named 'Build'"
 const { signToken, AuthenticationError } = require('../utils/auth');
-//authenticationError is throwing a error " SyntaxError: The requested module '../utils/auth.js' does not provide an export named 'AuthenticationError' "
+
+const { User, Game, Build } = require('../models/index');
 
 const resolvers = {
     Query: {
@@ -41,7 +40,8 @@ const resolvers = {
         //     return Game.create(args);
         // },
         addUser: async (parent, args) => {
-            const user = await User.create(args);
+            const { username, email, password } = args;
+            const user = await User.create({ username, email, password });
             const token = signToken(user);
             return { token, user };
         },

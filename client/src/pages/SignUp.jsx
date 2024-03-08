@@ -6,39 +6,32 @@ import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const Signup = () => {
-  const [formState, setFormState] = useState({
+  const [formState, setFormState] = useState({ 
     username: '',
     email: '',
-    password: '',
-  });
-  const [addUser, { error, data }] = useMutation(ADD_USER);
-console.log(1)
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+    password: ''
+   })
 
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
-  console.log(2)
+  const [addUser, { error, data }] = useMutation(ADD_USER)
+
+  const handleChange = (event) => {
+    const { name, value } = event.target
+    setFormState({ ...formState, [name]: value })
+  }
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    console.log(formState);
-
+    event.preventDefault()
+    console.log(formState)
+    console.log("-------------------")
+    console.log(event)
     try {
-      const { data } = await addUser({
-        variables: { ...formState },
-      });
-      console.log(data, 5)
-      Auth.login(data.addUser.token);
+      const { data } = await addUser({ variables: { ...formState } })
+      console.log(data.ADD_USER)
+      Auth.login(data.addUser.token)
     } catch (e) {
-      console.error(e);
+      console.error(e)
     }
-  };
-  console.log(3)
-
+  }
   return (
     <div className="signup">
       <div className="signup_card">
@@ -57,7 +50,7 @@ console.log(1)
                 placeholder="Your username"
                 name="username"
                 type="text"
-                value={formState.name}
+                value={formState.username}
                 onChange={handleChange}
               />
               <input

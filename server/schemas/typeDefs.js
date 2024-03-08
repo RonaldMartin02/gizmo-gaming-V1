@@ -1,10 +1,14 @@
 const typeDefs = `#graphql
+    type Auth {
+        token: ID!
+        user: User
+    }
     type User {
-        _id: ID
+        _id: ID!
         username: String
         email: String
         password: String
-        builds: [Build]!
+        builds: [Build]
     } 
      type Game {
         _id: ID
@@ -28,10 +32,6 @@ const typeDefs = `#graphql
         commentUser: User
         createdAt: String
     }
-    type Auth {
-        token: ID!
-        user: User
-    }
     type Query {
         # games
         # games: [Game]
@@ -45,14 +45,9 @@ const typeDefs = `#graphql
     }
     type Mutation {
         #Sign up(addUser) and login
-        addUser(username: String!, email: String!, password: String!): User
-        login(email: String!): Auth
+        addUser(username: String!, email: String!, password: String!): Auth
+        login(email: String!,password: String!): Auth
 
-        # addGame(
-        #     gameTitle: String!,
-        #      genre: String!,
-        #       esrb: String!
-        #       ): Game
         addBuild(
             postTitle: String!, 
             postBody: String!, 
