@@ -17,15 +17,15 @@ export default function Landing() {
             description: 'This is the third project',
         }
     ];
-return (
-    <div>
-    <h1>Landing</h1>
-    <div className='single-project'>
-        {posts.map((post, index) => (
-            <Post title={post.title} game={post.game} description={post.description} key={index} />
-            ))}   
-    </div>
-        {/* <Link to="/">Go to Home</Link> */}
+    return (
+        <div>
+            <h1>Landing</h1>
+            <div className='single-project'>
+                {posts.map((post, index) => (
+                    <Post title={post.title} game={post.game} description={post.description} key={index} />
+                ))}
             </div>
-);
+            {/* <Link to="/">Go to Home</Link> */}
+        </div>
+    );
 }
