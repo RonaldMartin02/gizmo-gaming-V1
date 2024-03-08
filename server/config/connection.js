@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-const {connection, connect} = require('mongoose');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/GizmoDB');
 
-connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/programming-thoughts');
-
-module.exports = connection;
+module.exports = mongoose.connection;

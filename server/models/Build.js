@@ -28,10 +28,6 @@ const commentSchema = new Schema({
     type: String,
     required: true
   },
-  buildId: {
-    type: String,
-    required: true
-  },
 });
 
 const buildStatsSchema = new Schema({
@@ -74,8 +70,8 @@ const buildSchema = new Schema({
     type: Number,
     required: false
   },
-  postComments: [commentSchema],
   buildStats: [buildStatsSchema],
+  postComments: [commentSchema],
 });
 
 const Build = model('Build', buildSchema);
