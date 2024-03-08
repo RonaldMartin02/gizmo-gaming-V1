@@ -7,6 +7,8 @@
 // platform: String
 
 
+// DO NOT USE TIll AFTER THE PROJECT IS COMPLETE
+
 const {Schema, model} = require('mongoose');
 
 const gameSchema = new Schema({

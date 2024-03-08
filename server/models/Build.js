@@ -46,6 +46,10 @@ const buildSchema = new Schema({
   //   type: Number,
   //   required: true
   // },
+  Game: {
+    type: String,
+    required: true
+  },
   postTitle: {
     type: String,
     required: true

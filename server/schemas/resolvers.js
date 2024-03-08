@@ -5,12 +5,12 @@ const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-        games: async () => {
-            return Game.find();
-        },
-        game: async (parent, { id }) => {
-            return Game.findOne({ _id: id })
-        },
+        // games: async () => {
+        //     return Game.find();
+        // },
+        // game: async (parent, { id }) => {
+        //     return Game.findOne({ _id: id })
+        // },
         builds: async () => {
             return Build.find();
         },
@@ -37,9 +37,9 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        addGame: async (parent, args) => {
-            return Game.create(args);
-        },
+        // addGame: async (parent, args) => {
+        //     return Game.create(args);
+        // },
         addUser: async (parent, args) => {
             const user = await User.create(args);
             const token = signToken(user);
