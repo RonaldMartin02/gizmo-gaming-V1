@@ -3,19 +3,28 @@ import { Link, useLocation } from 'react-router-dom';
 
 export default function Landing() {
     const currentPage = useLocation().pathname;
+
     const posts = [
         {
-            title: 'Post 1',
-            description: 'This is the first project',
+            title: 'My First Build',
+            game: 'League of Legends',
+            description: 'This is my first build. I hope you like it!'
         },
         {
-            title: 'Project 2',
-            description: 'This is the second project',
+            title: 'My Second Build',
+            game: 'Minecraft',
+            description: 'This is my second build. I hope you like it!'
         },
         {
-            title: 'Project 3',
-            description: 'This is the third project',
-        }
+            title: 'My Third Build',
+            game: 'Fortnite',
+            description: 'This is my third build. I hope you like it!'
+        },
+        {
+            title: 'My Fourth Build',
+            game: 'Call of Duty',
+            description: 'This is my fourth build. I hope you like it!'
+        },
     ];
 return (
     <div>
