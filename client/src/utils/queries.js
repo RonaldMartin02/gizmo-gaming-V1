@@ -1,5 +1,6 @@
 import { gql } from "@apollo/client";
 
+// Query for the user
 export const QUERY_USER = gql`
     query user($username: String) {
         user(username: $username) {
@@ -16,6 +17,8 @@ export const QUERY_USER = gql`
         }
     }
     `;
+
+// Query for all posts
     export const QUERY_POSTS = gql`
     query posts {
         posts {
@@ -30,6 +33,8 @@ export const QUERY_USER = gql`
         }
     }
     `;
+
+// Query for a single post
     export const QUERY_POST = gql`
     query post($id: ID!) {
         post(_id: $id) {

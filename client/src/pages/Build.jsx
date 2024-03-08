@@ -5,16 +5,17 @@ import { useQuery } from '@apollo/client';
 
 import Comment from '../components/Comment';
 
+import { QUERY_POST } from '../utils/queries';
+
+// 
 export default function Build() {
-    // const currentPage = useLocation().pathname;
     const posts = [
         {
             title: 'Post 1',
             description: 'This is the first project',
             Comments: [
                 {
-                    commentUser
-                    : 'User',
+                    commentUser: 'User',
                     commentBody: 'This is the first comment',
                 }]
         },
@@ -37,29 +38,28 @@ export default function Build() {
                 }]
         }
     ];
-return (
-    <div>
-    <h1>Build Post</h1>
-    <div className='single-project'>
-        {posts.map ((post, index) => (
-            <div key={index}>
-                <h2>{post.title}</h2>
-                <p>{post.description}</p>
-                <Comment commentUer
-                 = {post.Comments[0].commentUser
-                } commentBody = {post.Comments[0].commentBody}
-         />
+    return (
+        <div>
+            <h1>Build Post</h1>
+            <div className='single-project'>
+                {posts.map((post, index) => (
+                    <div key={index}>
+                        <h2>{post.title}</h2>
+                        <p>{post.description}</p>
+                        <Comment commentUer
+                            ={post.Comments[0].commentUser
+                            } commentBody={post.Comments[0].commentBody}
+                        />
+                    </div>
+                ))}
             </div>
-        ))}
-    </div>
-        {/* <Link to="/">Go to Home</Link> */}
-            </div>
-);
+            {/* <Link to="/">Go to Home</Link> */}
+        </div>
+    );
 }
 
 
 
-// import { QUERY_POST } from '../utils/queries';
 
 // const Build = () => {
 //   const { buildId } = useParams();
