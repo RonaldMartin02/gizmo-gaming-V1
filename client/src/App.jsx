@@ -11,6 +11,8 @@ import LoggedOutHeader from './components/LoggedOutHeader'
 import Footer from './components/Footer'
 import './App.css'
 
+import decode from 'jwt-decode'
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -45,6 +47,11 @@ function renderContent() {
 }
 
 function App() {
+  const token = localStorage.getItem('id_token');
+  // if (decode(token).exp < Date.now() / 1000) {
+  //   localStorage.removeItem('id_token');
+  //   window.location.assign('/login');
+  // }
   return (
     <ApolloProvider client={client}>
          {renderContent()}
