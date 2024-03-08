@@ -50,7 +50,6 @@ const lastNames = [
     'Garcia',
     'Miller',
 ];
-
 const Games = [
     'Fortnite',
     'League of Legends',
@@ -58,7 +57,6 @@ const Games = [
     'World of Warcraft',
     'Apex Legends',
 ]
-
 const comments = [
     'This @#$%^&* sucks!',
     'this is the best thing ever!',
@@ -66,7 +64,6 @@ const comments = [
     'I hate this!',
     'I am indifferent about this!',
 ]
-
 const emails = [
     '@gmail.com',
     '@yahoo.com',
@@ -96,16 +93,55 @@ const buildGenre = [
     'Battle Royale',
     'RPG',
 ]
-
+const buildStats = [
+    {
+        statName: 'Attack',
+        statValue: `${Math.floor(Math.random() * 100)}`
+    },
+    {
+        statName: 'Defense',
+        statValue: `${Math.floor(Math.random() * 100)}`
+    },
+    {
+        statName: 'Health',
+        statValue: `${Math.floor(Math.random() * 100)}`
+    },
+    {
+        statName: 'Speed',
+        statValue: `${Math.floor(Math.random() * 100)}`
+    },
+    {
+        statName: 'Magic',
+        statValue: `${Math.floor(Math.random() * 100)}`
+    },
+]
 
 const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
 const FullName = () => `${getRandomArrItem(firstNames)} ${getRandomArrItem(lastNames)}`;
+
 const getRandomUsername = () => {
     return `${ FullName() + Math.floor(Math.random() * 100)}`;
 }
 const getRandomEmail = () => {
     return getRandomArrItem(emails);
+}
 
+//Seed data for the build model
+const getRandomGame = () => {
+    return getRandomArrItem(Games);
+}
+const getRandomPostTitle = () => {
+    return getRandomArrItem(postTitle);
+}
+const getRandomPostBody = () => {
+    return getRandomArrItem(postBody);
+}
+const getRandomBuildGenre = () => {
+    return getRandomArrItem(buildGenre);
+}
+const getRandomBuildStats = () => {
+    return getRandomArrItem(buildStats);
 }
 
 const getRandomComments = (int) => {
@@ -127,4 +163,4 @@ const getRandomFriendsList = (int) => {
     }
     return results;
   }
-module.exports = { getRandomUsername, getRandomThoughts, getRandomComments, getRandomEmail, getRandomFriendsList };
+module.exports = { getRandomUsername, getRandomComments, getRandomEmail, getRandomFriendsList , getRandomGame, getRandomPostTitle, getRandomPostBody, getRandomBuildGenre, getRandomBuildStats };
