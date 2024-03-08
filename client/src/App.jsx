@@ -34,11 +34,20 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+function renderContent() {
+  if (localStorage.getItem('id_token')) {
+    console.log('LoggedInHeader')
+    return <LoggedInHeader />
+  } else {
+    console.log('LoggedOutHeader')
+    return <LoggedOutHeader />
+  }
+}
+
 function App() {
   return (
     <ApolloProvider client={client}>
-        
-        {/* {renderContent()} */}
+         {renderContent()}
       <main>
         <Outlet />
       </main>
