@@ -5,27 +5,25 @@ import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
-const LogIn = (props) => {
-  const [formState, setFormState] = useState({ email: '', password: '' });
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+const LogIn = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loginUser, { error }] = useMutation(LOGIN_USER);
 
-  // update state based on form input changes
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
   };
 
-  // submit form
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    console.log(formState);
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log('Email:', email);
     try {
-      const { data } = await login({
-        variables: { ...formState },
+      const { data } = await loginUser({
+        variables: { email, password },
       });
 
       Auth.login(data.login.token);
@@ -33,61 +31,45 @@ const LogIn = (props) => {
       console.error(e);
     }
 
-    // clear form values
-    setFormState({
-      email: '',
-      password: '',
-    });
+    setEmail('');
+    setPassword('');
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
-            {data ? (
-              <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
-              </p>
-            ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
-            )}
-
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
-            )}
-          </div>
+    <div className='login'>
+      <div className='login_card'>
+        <h4 className='login_card_header'>Login</h4>
+        <div className='login_card_body'>
+          <form onSubmit={handleSubmit}>
+            <input
+              className='login_formInput'
+              placeholder='Your email'
+              name='email'
+              type='email'
+              value={email}
+              onChange={handleEmailChange}
+            />
+            <input
+              className='login_formInput'
+              placeholder='******'
+              name='password'
+              type='password'
+              value={password}
+              onChange={handlePasswordChange}
+            />
+            <button className='login_btn' style={{ cursor: 'pointer' }} type='submit'>
+              Submit
+            </button>
+          </form>
+          {error && (
+            <div className='login_errorMsg'>
+              {error.message}
+            </div>
+          )}
         </div>
       </div>
-    </main>
+      <Link to='/signup'>Create a new account.</Link> 
+    </div>
   );
 };
 

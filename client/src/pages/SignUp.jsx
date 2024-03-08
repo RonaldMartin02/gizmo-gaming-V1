@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
@@ -13,7 +12,7 @@ const Signup = () => {
     password: '',
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
-
+console.log(1)
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -22,6 +21,7 @@ const Signup = () => {
       [name]: value,
     });
   };
+  console.log(2)
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -31,69 +31,71 @@ const Signup = () => {
       const { data } = await addUser({
         variables: { ...formState },
       });
-
+      console.log(data, 5)
       Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
     }
   };
+  console.log(3)
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-          <div className="card-body">
-            {data ? (
-              <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
-              </p>
-            ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your username"
-                  name="username"
-                  type="text"
-                  value={formState.name}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
-            )}
+    <div className="signup">
+      <div className="signup_card">
+        <h4 className="signup_card_header">Sign Up</h4>
+        <div className="signup_card_body">
+          {data ? (
+              console.log(4),
+            <p>
+              Success! You may now head{' '}
+              <Link to="/">back to the homepage.</Link>
+            </p>
+          ) : (
+            <form onSubmit={handleFormSubmit}>
+              <input
+                className="signup_formInput"
+                placeholder="Your username"
+                name="username"
+                type="text"
+                value={formState.name}
+                onChange={handleChange}
+              />
+              <input
+                className="signup_formInput"
+                placeholder="Your email"
+                name="email"
+                type="email"
+                value={formState.email}
+                onChange={handleChange}
+              />
+              <input
+                className="signup_formInput"
+                placeholder="******"
+                name="password"
+                type="password"
+                value={formState.password}
+                onChange={handleChange}
+              />
+              <button
+                className="signup_btn"
+                style={{ cursor: 'pointer' }}
+                type="submit"
+              >
+                Submit
+              </button>
+            </form>
+          )}
 
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
-            )}
-          </div>
+          {error && (
+            console.log("uh oh, bro..."),
+            <div className="signup_errorMsg">
+              {error.message}
+            </div>
+          )}
         </div>
       </div>
-    </main>
+      <Link to='/login'>Already have an account? Login here.</Link>
+    </div>
   );
 };
 
