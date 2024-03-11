@@ -5,7 +5,7 @@ import { useQuery } from '@apollo/client';
 
 import Comment from '../components/Comment';
 
-import { QUERY_POST } from '../utils/queries';
+import { QUERY_BUILD } from '../utils/queries';
 
 // 
 export default function Build() {
@@ -64,7 +64,7 @@ export default function Build() {
 // const Build = () => {
 //   const { buildId } = useParams();
 
-//   const { loading, data } = useQuery(QUERY_POST, {
+//   const { loading, data } = useQuery(QUERY_BUILD, {
 //     variables: { buildId: buildId },
 //   });
 
