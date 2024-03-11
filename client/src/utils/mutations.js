@@ -22,8 +22,8 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
   }
 }
 `;
-export const ADD_POST = gql`
-mutation addPost($postText: String!) {
+export const ADD_BUILD = gql`
+mutation addBuild($postText: String!) {
   addPost(postText: $postText) {
     _id
     postText
