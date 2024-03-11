@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 import Post from '../components/Post';
-
+import { Link } from 'react-router-dom';
 import { GET_ALL_BUILDS } from '../utils/queries.js';
 export default function Landing() {
     const { loading, data } = useQuery(GET_ALL_BUILDS,{
