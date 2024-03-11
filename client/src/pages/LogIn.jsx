@@ -40,7 +40,7 @@ const LogIn = () => {
         <div className='login_card_body'>
           <form onSubmit={handleSubmit}>
             <input
-              className='login_formInput'
+              className='login_card_formInput'
               placeholder='Your email'
               name='email'
               type='email'
@@ -48,7 +48,7 @@ const LogIn = () => {
               onChange={handleChange}
             />
             <input
-              className='login_formInput'
+              className='login_card_formInput'
               placeholder='******'
               name='password'
               type='password'

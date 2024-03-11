@@ -6,13 +6,17 @@ export default function Header() {
   const handleLogOut = () => {
     Auth.logout()
   }
-  const currentPage = useLocation().pathname;
     return (
       <header>
-     <input type="text" />
-        <h2>Gizmo Gaming</h2>
-          <button onClick={()=>{console.log("newPost")}}>New Post</button>
+       <div>
+     <input type="text"/>
+     <button>Search</button>
+      </div>
+        <h2 className='GizmoGaming' onClick={()=>{window.location.href = "/"}}>Gizmo Gaming</h2>
+        <div>
+          <button onClick={()=>{window.location.href = "./Build/Create"}}>New Post</button>
         <button onClick={handleLogOut}>Sign Out</button>
+      </div>
       </header>
     );
   }
