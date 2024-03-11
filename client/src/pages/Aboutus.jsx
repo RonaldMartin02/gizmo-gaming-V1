@@ -12,7 +12,11 @@ export default function Aboutus() {
       <img className='About_div_imgs_img' src={RPortrait} alt="" />
       <img className='About_div_imgs_img' src={JPortrait} alt="" />
         </div>
-      <p className='About_desctiption'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum, quidem tenetur. Mollitia ipsa fuga debitis necessitatibus aspernatur distinctio eum neque dolore atque quisquam. Beatae quaerat deserunt expedita maxime labore commodi? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eligendi? Ab ipsam nihil pariatur placeat quidem repudiandae sed numquam eos, maxime, provident corrupti cupiditate officiis sapiente similique. Aperiam, repellat veritatis. </p>
+        <div className='About_description_div'>
+      <p className='About_description'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum, quidem tenetur. Mollitia ipsa fuga debitis necessitatibus aspernatur distinctio eum neque dolore atque quisquam. Beatae quaerat deserunt expedita maxime labore commodi? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eligendi? Ab ipsam nihil pariatur placeat quidem repudiandae sed numquam eos, maxime, provident corrupti cupiditate officiis sapiente similique. Aperiam, repellat veritatis. </p>
+
+      <p className='About_description'>My first foray in proper web development started with the 2023 UConn Fullstack coding bootcamp. From this course, with the training staff we had available to us, I was given a solid platform to be able to grow and improve my skills as a developer from. In terms of gamers, I was a pretty shotty one (pun fully intended) being that I only played one or two FPS games. The idea behind this project then, was to offer novice gamers like myself a platform to learn specific tactics and character development that would make starting a new game a smoother process. We all know what its like to jump into a AAA title game months after launch just to be demolished. The goal of Gizmo Gaming is to alleviate that and sort of level the playing field, so to speak. Game On, Players!</p>
+      </div>
       </div>
     </div>
   );

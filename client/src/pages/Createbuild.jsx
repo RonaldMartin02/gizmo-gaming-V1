@@ -54,20 +54,19 @@ export default function Createbuild() {
             <h1>Share your Build!</h1>
 
             {Auth.loggedIn() ? (
-                <div>
-                    <form className='submit-form'
+                    <form className='Submit_form'
                         onSubmit={handleFormSubmit}>
                         <input
                             placeholder='Title'
                             value={postTitle}
-                            className='form-title'
+                            className='Submit_form_title'
                             onChange={handleChange}
                             name='postTitle' />
 
                         <select
                             name='game'
                             id='game'
-                            className='form-game'
+                            className='Submit_form_game'
                             onChange={handleChange} >
                             <option value="">Select a game</option>
                             <option value='game1'>World of Warcraft</option>
@@ -79,7 +78,7 @@ export default function Createbuild() {
                         {/* <select
                             name='genre'
                             id='genre'
-                            className='form-genre'
+                            className='Submit_form_genre'
                             onChange={handleChange} >
                             <option value="" disabled hidden>Select a genre</option>
                             <option value='genre1'>RPG</option>
@@ -90,21 +89,21 @@ export default function Createbuild() {
 
                         <textarea
                             id="postText"
+                            className='Submit_form_text'
                             name="postText"
                             placeholder="Here is a new build..."
                             rows="4"
                             onChange={handleChange}
                             required />
                         <p
-                            className={`char-count ${characterCount === 280 || error ? 'text-danger' : ''
+                            className={`Submit_form_char-count ${characterCount === 280 || error ? 'text-danger' : ''
                                 }`}
                         >
                             Character Count: {characterCount}/280
-                            {error && <span className='text-error'>Something went wrong...</span>}
+                            {error && <span className='Submit_form_text-error'>Something went wrong...</span>}
                         </p>
-                        <button className='btn' type='submit'>Add Build</button>
+                        <button className='Submit_form_btn' type='submit'>Add Build</button>
                     </form>
-                </div>
             ) : (
                 <p>
                     You need to be logged in to share your build. Please{' '}
@@ -114,4 +113,3 @@ export default function Createbuild() {
         </div>
     );
 }
-
