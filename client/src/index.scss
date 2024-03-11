@@ -62,13 +62,8 @@ header {
   background-color: #1a1a1a;
   color: #646cff;
   font-size: 1.2em;
-  font-weight: 500;
+  // font-weight: 500;
   font-family: inherit;
-  position: relative;
-  left: 0;
-  right: 0;
-  top: 0;
-  width: 99%;
   border-bottom: 1px solid #646cff;
 }
 footer{
@@ -137,6 +132,7 @@ img {
   &_Name{
     font-size: 30px;
     font-weight: 600;
+    cursor: pointer;
   }
   &_Logo{
     color: #646cff;
@@ -146,6 +142,122 @@ img {
     padding: 10px;
     &:hover{
       color: #535bf2;
+    }
+  }
+}
+
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  &_card{
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: #646cff;
+    font-size: 1.2em;
+    font-weight: 500;
+    font-family: inherit;
+    border: 1px solid #646cff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 #646cff;
+    &_header{
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    &_formInput{
+      margin-bottom: 20px;
+      width: 100%;
+      // padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #646cff;
+      background-color: #1a1a1a;
+      color: #646cff;
+      font-size: 1.2em;
+      font-weight: 500;
+      font-family: inherit;
+      &:focus{
+        outline: none;
+        border: 1px solid #535bf2;
+      }
+    }
+  }
+}
+.signup{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  &_card{
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: #646cff;
+    font-size: 1.2em;
+    font-weight: 500;
+    font-family: inherit;
+    border: 1px solid #646cff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 #646cff;
+    &_header{
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    &_formInput{
+      margin-bottom: 20px;
+      width: 100%;
+      // padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #646cff;
+      background-color: #1a1a1a;
+      color: #646cff;
+      font-size: 1.2em;
+      font-weight: 500;
+      font-family: inherit;
+      &:focus{
+        outline: none;
+        border: 1px solid #535bf2;
+      }
+    }
+  }
+    
+
+}
+
+.GizmoGaming{
+  cursor: pointer;
+}
+
+.About{
+  &_title{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  &_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &_imgs{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      margin-bottom: 20px;
+      &_img{
+        width: 25%;
+        height: 25%;
+        margin: 0 20px;
+        border: #646cff 2px solid;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 #1a1a1a;
+      }
     }
   }
 }
