@@ -32,9 +32,9 @@ const userSchema = new Schema({
     default: Date.now 
   },
   // lastAccessed: { type: Date, default: Date.now },
-  buildPosts: { 
-    type: Array, 
-    required: false 
+  builds: { 
+    type: Schema.Types.ObjectId,
+    ref: 'Build'
   },
 });
 
