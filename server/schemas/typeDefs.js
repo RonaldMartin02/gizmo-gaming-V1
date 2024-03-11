@@ -10,12 +10,12 @@ const typeDefs = `#graphql
         password: String
         builds: [Build]
     } 
-     type Game {
-        _id: ID
-        gameTitle: String
-        genre: String
-        esrb: String
-    }
+    #  type Game {
+    #     _id: ID
+    #     gameTitle: String
+    #     genre: String
+    #     esrb: String
+    # }
   
     type Build {
         _id: ID
@@ -23,7 +23,7 @@ const typeDefs = `#graphql
         postBody: String
         buildGenre: String
         postUser: User
-        game: Game!
+        game: String
         comments: [Comment]!
     }
     type Comment {

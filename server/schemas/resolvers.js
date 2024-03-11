@@ -11,13 +11,13 @@ const resolvers = {
         //     return Game.findOne({ _id: id })
         // },
         builds: async () => {
-            return Build.find();
+            return Build.find({});
         },
         build: async (parent, { id }) => {
             return Build.findOne({ _id: id })
         },
         users: async () => {
-            return User.find();
+            return User.find({});
         },
         user: async (parent, { id }) => {
             return User.findOne({ _id: id })
