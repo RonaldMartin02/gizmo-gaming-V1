@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
 import { ADD_BUILD } from '../utils/mutations';
-import { QUERY_BUILDS } from '../utils/queries';
+import { GET_ALL_BUILDS } from '../utils/queries';
 
 import Auth from '../utils/auth';
 
@@ -15,7 +15,7 @@ export default function Createbuild() {
         {
             refetchQueries:
                 [
-                    QUERY_BUILDS,
+                    GET_ALL_BUILDS,
                     'getBuilds'
                 ]
         });
