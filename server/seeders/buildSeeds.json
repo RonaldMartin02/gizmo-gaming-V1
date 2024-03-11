@@ -1,118 +1,30 @@
 [
     {
-        "Game": "Overwatch",
-        "postTitle": "Death Ball",
-        "postBody": "This allows you to become a ball of death and roll around the map killing everything in your path.",
+        "game": "Overwatch",
+        "title": "Death Ball",
+        "body": "This allows you to become a ball of death and roll around the map killing everything in your path.",
         "buildGenre": "Offense",
-        "postUser": "UnholySquid",
-        "buildStats":[
-            {
-                "statName": "Damage",
-                "statValue": "100"
-            },
-            {
-                "statName": "Speed",
-                "statValue": "100"
-            },
-            {
-                "statName": "Health",
-                "statValue": "100"
-            }
-        ],
-        "postComments":[{
-            "commentBody": "This is a great build, I use it all the time.",
-            "commentUser": "Unholy5"
-        },
-        {
-            "commentBody": "I don't like this build, it's too overpowered.",
-            "commentUser": "Unholy4"}
-        ]
+        "username": "UnholySquid"
     },
     {
-        "Game": "World of Warcraft",
-        "postTitle": "Tank",
-        "postBody": "This build allows you to become a tank and take a lot of damage.",
+        "game": "World of Warcraft",
+        "title": "Tank",
+        "body": "This build allows you to become a tank and take a lot of damage.",
         "buildGenre": "Defense",
-        "postUser": "UnholySquid",
-        "buildStats":[
-            {
-                "statName": "Damage",
-                "statValue": "50"
-            },
-            {
-                "statName": "Speed",
-                "statValue": "50"
-            },
-            {
-                "statName": "Health",
-                "statValue": "200"
-            }
-        ],
-        "postComments":[{
-            "commentBody": "This is a great build, I use it all the time.",
-            "commentUser": "Unholy5"
-        },
-        {
-            "commentBody": "I don't like this build, it's too overpowered.",
-            "commentUser": "Unholy4"}
-        ]
+        "username": "UnholySquid"
     },
     {
-        "Game": "League of Legends",
-        "postTitle": "Speedy",
-        "postBody": "This build allows you to become very fast and dodge attacks.",
+        "game": "League of Legends",
+        "title": "Speedy",
+        "body": "This build allows you to become very fast and dodge attacks.",
         "buildGenre": "Defense",
-        "postUser": "UnholySquid",
-        "buildStats":[
-            {
-                "statName": "Damage",
-                "statValue": "50"
-            },
-            {
-                "statName": "Speed",
-                "statValue": "200"
-            },
-            {
-                "statName": "Health",
-                "statValue": "50"
-            }
-        ],
-        "postComments":[{
-            "commentBody": "This is a great build, I use it all the time.",
-            "commentUser": "Unholy5"
-        },
-        {
-            "commentBody": "I don't like this build, it's too overpowered.",
-            "commentUser": "Unholy4"}
-        ]
+        "username": "UnholySquid"
     },
     {
-        "Game": "Halo",
-        "postTitle": "Balanced",
-        "postBody": "This build allows you to have a good balance of speed, damage, and health.",
+        "game": "Halo",
+        "title": "Balanced",
+        "body": "This build allows you to have a good balance of speed, damage, and health.",
         "buildGenre": "Defense",
-        "postUser": "UnholySquid",
-        "buildStats":[
-            {
-                "statName": "Damage",
-                "statValue": "100"
-            },
-            {
-                "statName": "Speed",
-                "statValue": "100"
-            },
-            {
-                "statName": "Health",
-                "statValue": "100"
-            }
-        ],
-        "postComments":[{
-            "commentBody": "This is a great build, I use it all the time.",
-            "commentUser": "Unholy5"
-        },
-        {
-            "commentBody": "I don't like this build, it's too overpowered.",
-            "commentUser": "Unholy4"}
-        ]
+        "username": "UnholySquid"
     }
 ]

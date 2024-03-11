@@ -4,23 +4,15 @@ const { User, Game, Build } = require('../models/index');
 
 const resolvers = {
     Query: {
-        // games: async () => {
-        //     return Game.find();
-        // },
-        // game: async (parent, { id }) => {
-        //     return Game.findOne({ _id: id })
-        // },
         builds: async () => {
-            return Build.find({});
-        },
-        build: async (parent, { id }) => {
-            return Build.findOne({ _id: id })
-        },
-        users: async () => {
-            return User.find({});
-        },
-        user: async (parent, { id }) => {
-            return User.findOne({ _id: id })
+            try {
+                const builds = await Build.find({}).exec();
+                console.log(builds);
+                return builds;
+            } catch (error) {
+                console.error("Error fetching builds:", error);
+                throw error; // Re-throw the error to propagate it to the GraphQL client
+            }
         },
     },
     Mutation: {

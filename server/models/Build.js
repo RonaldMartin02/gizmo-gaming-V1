@@ -11,50 +11,50 @@
 // statValue: String
 const { Schema, model } = require('mongoose');
 
-const commentSchema = new Schema({
-  // id: {
-  //   type: Number,
-  //   required: true
-  // },
-  commentBody: {
-    type: String,
-    required: true
-  },
-  commentDate: {
-    type: Date,
-    default: Date.now
-  },
-  commentUser: {
-    type: String,
-    required: true
-  },
-});
+// const commentSchema = new Schema({
+//   // id: {
+//   //   type: Number,
+//   //   required: true
+//   // },
+//   commentBody: {
+//     type: String,
+//     required: true
+//   },
+//   // commentDate: {
+//   //   type: Date,
+//   //   default: Date.now
+//   // },
+//   username: {
+//     type: String,
+//     required: true
+//   },
+// });
 
-const buildStatsSchema = new Schema({
-  statName: {
-    type: String,
-    required: true
-  },
-  statValue: {
-    type: String,
-    required: true
-  }
-});
+// const buildStatsSchema = new Schema({
+//   statName: {
+//     type: String,
+//     required: true
+//   },
+//   statValue: {
+//     type: String,
+//     required: true
+//   }
+// });
 
 const buildSchema = new Schema({
   // id: {
   //   type: Number,
   //   required: true
   // },
-  Game: {
+  title: {
     type: String,
     required: true
   },
-  postTitle: {
+  game: {
     type: String,
     required: true
   },
-  postBody: {
+  body: {
     type: String,
     required: true
   },
@@ -66,16 +66,16 @@ const buildSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  postUser: {
+  username: {
     type: String,
     required: true
   },
-  postRating: {
-    type: Number,
-    required: false
-  },
-  buildStats: [buildStatsSchema],
-  postComments: [commentSchema],
+  // rating: {
+  //   type: Number,
+  //   required: false
+  // },
+  // buildStats: [buildStatsSchema],
+  // comments: [commentSchema],
 });
 
 const Build = model('Build', buildSchema);

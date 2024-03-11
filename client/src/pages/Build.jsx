@@ -5,7 +5,7 @@ import { useQuery } from '@apollo/client';
 
 import Comment from '../components/Comment';
 
-import { QUERY_BUILD } from '../utils/queries';
+// import { QUERY_BUILD } from '../utils/queries';
 
 // 
 export default function Build() {

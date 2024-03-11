@@ -6,8 +6,7 @@ const cleanDB = require('./cleanDB');
 console.log('Loading seeds...');
 
 db.once('open', async () => {
-    console.log('Seeding the database...');
-    await cleanDB('Build', 'Builds');
+    await cleanDB('Build', 'Build');
     console.log('Database cleaned!');
     await Build.insertMany(buildSeeds);
     console.log('Builds seeded!');

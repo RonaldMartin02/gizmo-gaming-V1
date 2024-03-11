@@ -1,55 +1,11 @@
 import { gql } from "@apollo/client";
 
-// Query for the user
-export const QUERY_USER = gql`
-    query user($username: String) {
-        user(username: $username) {
-        _id
-        username
-        email
-        postCount
-        posts {
-            _id
-            postText
-            createdAt
-            commentCount
-        }
-        }
-    }
-    `;
-
-// Query for all posts
-    export const QUERY_BUILDS = gql`
-    query builds {
+export const GET_ALL_BUILDS = gql`
+    query Builds {
         builds {
-        _id
-        postText
-        createdAt
-        username
-        commentCount
-        comments {
-            _id
-        }
+        title
+        body
+        game
         }
     }
     `;
-
-// Query for a single post
-    export const QUERY_BUILD = gql`
-    query build($id: ID!) {
-        build(_id: $id) {
-        _id
-        postText
-        createdAt
-        username
-        commentCount
-        comments {
-            _id
-            commentText
-            createdAt
-            username
-        }
-        }
-    }
-    `;
-    
