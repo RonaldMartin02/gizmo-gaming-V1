@@ -4,7 +4,7 @@ import Auth from '../utils/auth';
 import { useParams } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
 
-import Comment from '../components/Comment';
+// import Comment from '../components/Comment';
 
 import { GET_BUILD } from '../utils/queries';
 import { REMOVE_BUILD } from '../utils/mutations';
@@ -57,6 +57,8 @@ export default function Build() {
                     <button onClick={handleDelete}>Delete</button>
                 </div>
             );
+        } else {
+            return <div>Login to edit this post!</div>
         }
     
     }
