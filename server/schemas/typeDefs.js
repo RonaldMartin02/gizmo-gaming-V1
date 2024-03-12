@@ -44,7 +44,7 @@ type Mutation {
     addBuild( title: String!
         game: String!
         body: String!
-        buildGenre: String!
+        # buildGenre: String!
         username: String!
         # buildStats: [BuildStatsInput]
     ): Build
