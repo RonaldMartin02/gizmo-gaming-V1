@@ -5,6 +5,9 @@ $primary-color: #507DBC;
 $secondary-color: #A1C6EA;
 $tertiary-color: #BBD1EA;
 $font-size: 1.2em;
+.menu-button{
+  font-size: .5em;
+}
 .Header {
     display: flex;
     flex-direction: row;
@@ -51,7 +54,7 @@ $font-size: 1.2em;
     }
   
     &_GizmoGaming {
-      font-size: 4em;
+      font-size: 3em;
       font-weight: 600;
       cursor: pointer;
       display: flex;
@@ -66,8 +69,8 @@ $font-size: 1.2em;
       cursor: pointer;
       transition: border-color 0.25s;
     }
-    &_NavGizmoGaming {
-      font-size: 4em;
+    &_Nav {
+      font-size: 2em;
       font-weight: 600;
       cursor: pointer;
       display: flex;
@@ -101,7 +104,7 @@ $font-size: 1.2em;
   }
 
   
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
 
     .Header{
         flex-direction: column;
@@ -111,11 +114,11 @@ $font-size: 1.2em;
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: center;
+            justify-content: space-around;
             width: 100%;
         }
         &_GizmoGaming {
-          font-size: 1.6rem;
+          font-size: 2.5rem;
           width: auto;
           margin: 0% 0% 2% 6%;
         }
@@ -140,4 +143,22 @@ $font-size: 1.2em;
             justify-content: center;
         }
     }
+}
+@media (max-width: 768px){
+  .Header{
+    &_GizmoGaming {
+      font-size: 3rem;
+      width: auto;
+      margin: 0% 0% 2% 6%;
+    }
+  }
+}
+@media (max-width: 400px)  {
+  .Header{
+    &_GizmoGaming {
+      font-size: 2rem;
+      width: auto;
+      margin: 0% 0% 2% 6%;
+    }
+  }
 }
