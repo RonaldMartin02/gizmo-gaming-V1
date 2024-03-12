@@ -24,7 +24,7 @@ export default function Landing() {
     }
     return (
         //future development 
-        <div className='post'>
+        <div className='posts'>
             {posts.map((post, index) => (
 
                 <Post title={post.title} game={post.game} description={post.body} _id={post._id} key={index} />

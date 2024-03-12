@@ -81,7 +81,7 @@ export default function Createbuild() {
                         id='game'
                         className='Submit_form_game'
                         onChange={handleChange} >
-                        <option value="">Select a game</option>
+                        <option value="" selected="selected" disabled>Select a game</option >
                         <option value='World of Warcraft'>World of Warcraft</option>
                         <option value='League of Legends'>League of Legends</option>
                         <option value='Halo'>Halo</option>
