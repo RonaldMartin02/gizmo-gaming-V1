@@ -44,7 +44,17 @@ const resolvers = {
         addBuild: async (parent, args) => {
             return Build.create(args);
         },
+        editBuild: async (parent, args) => {
+            return Build.findByIdAndUpdate(
+                args._id,
+                { $set: { ...args } },
+                { new: true }
+            );
+        },
+        removeBuild: async (parent, { buildId }) => {
+            return Build.findByIdAndDelete(buildId);
     },
+    }
 };
 
 module.exports = resolvers;

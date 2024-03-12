@@ -48,8 +48,16 @@ type Mutation {
         username: String!
         # buildStats: [BuildStatsInput]
     ): Build
-    # addComment(buildId: ID!, commentBody: String!, username: String!): Build
+    editBuild(
+        _id: ID!
+        title: String
+        game: String
+        body: String
+        # buildGenre: String
+        # username: String
+    ): Build
     removeBuild(buildId: ID!): Build
+    # addComment(buildId: ID!, commentBody: String!, username: String!): Build
     removeComment(buildId: ID!, commentId: ID!): Build
 }
 `;

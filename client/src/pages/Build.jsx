@@ -2,11 +2,14 @@
 // import { Link, useLocation } from 'react-router-dom';
 import Auth from '../utils/auth';
 import { useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 
 import Comment from '../components/Comment';
 
 import { GET_BUILD } from '../utils/queries';
+
+
+
 
 // 
 export default function Build() {
@@ -22,8 +25,10 @@ export default function Build() {
     if (loading) {
         return <div>Loading...</div>;
     }
+
     const renderButtons = () => {
         if (build.username === Auth.getProfile().data.username) {
+            console.log('This is your post');
             return (
                 <div>
                     <button>Edit</button>
@@ -35,9 +40,11 @@ export default function Build() {
     }
     return (
         <div>
-            
-            <h1>{build.title}</h1><span>{build.username}</span>
+            <h1>{build.title}</h1>
+            <p>{build.game}</p>
+            <p>{build.username}</p>
             <p>{build.body}</p>
+            {renderButtons()}
         </div>
     );
 }
