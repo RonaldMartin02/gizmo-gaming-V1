@@ -24,7 +24,7 @@ export default function Createbuild() {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-console.log(postTitle, postText, postGame, Auth.getProfile().data.username);
+        console.log(postTitle, postText, postGame, Auth.getProfile().data.username);
         try {
             const { data } = await addBuild({
                 variables: {
@@ -38,7 +38,7 @@ console.log(postTitle, postText, postGame, Auth.getProfile().data.username);
             console.log(data);
 
             setPostText('');
-            window.location.href="/"
+            window.location.href = "/"
 
 
         } catch (err) {
@@ -52,14 +52,14 @@ console.log(postTitle, postText, postGame, Auth.getProfile().data.username);
         if (name === 'postTitle') {
             setPostTitle(value);
         } else if (name === 'postText' && value.length <= 280) {
-                setPostText(value);
-                setCharacterCount(value.length);
-            } else if (name === 'game') {
-                setGame(value);
-            }
-            // else if (name === 'genre') {
-            //     setGenre(value);
-            // }
+            setPostText(value);
+            setCharacterCount(value.length);
+        } else if (name === 'game') {
+            setGame(value);
+        }
+        // else if (name === 'genre') {
+        //     setGenre(value);
+        // }
     }
 
     return (
