@@ -10,13 +10,13 @@ export default function Header() {
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
+    console.log(searchTerm);
+    console.log(event.target.value);
   };
 
   const handleSearch = () => {
     // Perform the search action here
-    // You can redirect to the search results page or handle the search logic
-    // For example, redirecting to a search results page:
-    window.location.href = `/search?term=${searchTerm}`;
+    window.location.href = `/Search/${searchTerm}`;
   };
 
   const currentPage = useLocation().pathname;
