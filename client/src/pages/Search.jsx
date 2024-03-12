@@ -15,24 +15,16 @@ export default function Search() {
 
     const handleSearch = () => {
         const filteredPosts = posts.filter((post) =>
-            post.game.toLowerCase().includes(search.toLowerCase()));
-
+            post.game.toLowerCase().includes(search.toLowerCase())); 
+            if (filteredPosts.length === 0) {
+                alert('No results found.');
+                window.location.href = "/";
+            }
         return filteredPosts;
     };
 
     if (loading) {
-        return <div>Loading...</div>;
-    }
-
-    if (posts.length === 0) {
-        return (
-            <>
-                <h1>No posts yet</h1>
-                <div>
-                    <Link to="/build/create">Create a new post</Link>
-                </div>
-            </>
-        );
+        return <div className='loadingIcon'>Loading...</div>;
     }
 
     const filteredPosts = handleSearch();
