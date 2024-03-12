@@ -14,6 +14,10 @@ const resolvers = {
                 throw error; // Re-throw the error to propagate it to the GraphQL client
             }
         },
+        build: async (parent, { buildId }) => {
+            console.log(buildId);
+            return Build.findOne({ _id: buildId });
+        }
     },
     Mutation: {
         login: async (parent, { email, password }) => {
