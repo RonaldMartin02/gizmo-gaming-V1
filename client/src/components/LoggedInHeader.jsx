@@ -6,10 +6,10 @@ import './scss/LoggedInHeader.scss';
 export default function Header() {
   const [searchTerm, setsearchTerm] = useState('');
   const [isOpen, setIsOpen] = useState(false);
-  const [matches, setMatches] = useState(window.matchMedia("(max-width: 768px)").matches);
+  const [matches, setMatches] = useState(window.matchMedia("(max-width: 1000px)").matches);
 
   useEffect(() => {
-    window.matchMedia("(max-width: 768px)").addListener((e) => {
+    window.matchMedia("(max-width: 1000px)").addListener((e) => {
       setMatches(e.matches);
     });
   }, []);
@@ -54,8 +54,8 @@ export default function Header() {
         <header className='Header'>
           
           <div className='Header_Search' />
-          <div className='Header_GizmoGaming' onClick={() => { window.location.href = "/" }}>Gizmo Gaming</div>
           <div className='Header_Nav' >
+          <div className='Header_GizmoGaming' onClick={() => { window.location.href = "/" }}>Gizmo Gaming</div>
             {/* <div className='Header_NavGizmoGaming' onClick={() => { window.location.href = "/" }}>Gizmo Gaming</div> */}
           <button onClick={toggleMenu} className="menu-button">
           &#9776; {/* Hamburger Icon */}
@@ -79,7 +79,7 @@ export default function Header() {
       );
     }
   } else { if (!matches) {
-
+    console.log(matches)
     console.log("rendering logged in header");
     return (
       <header className='Header'>

@@ -73,30 +73,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-// footer {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   // padding: 1.5em 2em;
-//   background-color: #1a1a1a;
-//   color: #646cff;
-//   font-size: 1.2em;
-//   font-weight: 500;
-//   font-family: inherit;
-//   border-top: 1px solid #646cff;
-//   width: 100%;
-
-//   &_Div {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     width: 100%;
-//   }
-
-//   position: fixed;
-//   bottom: 0;
-// }
-
 img {
   max-width: 100%;
   height: auto;
@@ -123,46 +99,46 @@ img {
 }
 
 @media (max-width: 768px) {
-  .Header {
-    font-size: 1rem;
-    // &_Nav {
-    //   align-items: center;
-    //   justify-content: start;
-    // }
-    &_GizmoGaming {
-      font-size: 1.6rem;
-      width: auto;
-      margin: 0% 0% 2% 6%;
-    }
-    & button {
-      font-size: 0.8rem;
-    }
-    &_Search {
-      align-items: center;
-      justify-content: center;
-    }
-    &_Search input {
-      font-size: 0.8rem;
-      height: 15px;
-      width: 1000%;
-    }
-  }
+  // .Header {
+  //   font-size: 1rem;
+  //   // &_Nav {
+  //   //   align-items: center;
+  //   //   justify-content: start;
+  //   // }
+  //   &_GizmoGaming {
+  //     font-size: 1.6rem;
+  //     width: auto;
+  //     margin: 0% 0% 2% 6%;
+  //   }
+  //   & button {
+  //     font-size: 0.8rem;
+  //   }
+  //   &_Search {
+  //     align-items: center;
+  //     justify-content: center;
+  //   }
+  //   &_Search input {
+  //     font-size: 0.8rem;
+  //     height: 15px;
+  //     width: 1000%;
+  //   }
+  // }
 
-  .Footer {
-    font-size: small;
+  // .Footer {
+  //   font-size: small;
 
-    &_Name {
-      margin: 2%;
-    }
+  //   &_Name {
+  //     margin: 2%;
+  //   }
 
-    &_Div {
-      &_Right {
-        width: 15%;
-      }
+  //   &_Div {
+  //     &_Right {
+  //       width: 15%;
+  //     }
 
-      &_Left {
-        width: 85%;
-      }
-    }
-  }
+  //     &_Left {
+  //       width: 85%;
+  //     }
+  //   }
+  // }
 }
