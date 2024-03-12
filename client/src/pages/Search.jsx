@@ -12,6 +12,7 @@ export default function Search() {
     });
 
     const posts = data?.builds || [];
+    posts.reverse();
 
     const handleSearch = () => {
         const filteredPosts = posts.filter((post) =>

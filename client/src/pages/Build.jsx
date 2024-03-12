@@ -49,16 +49,20 @@ export default function Build() {
     }
 
     const renderButtons = () => {
-        if (build.username === Auth.getProfile().data.username) {
-            console.log('This is your post');
-            return (
-                <div>
+        if (!Auth.loggedIn()) {
+            console.log('You are not logged in');
+            return null;
+        }
+         else{
+            if (build.username === Auth.getProfile().data.username) {
+                console.log('This is your post');
+                return (
+                    <div>
                     <button onClick={()=>{window.location.href=`./Edit/${buildId}`}}>Edit</button>
                     <button onClick={handleDelete}>Delete</button>
                 </div>
             );
-        } else {
-            return <div>Login to edit this post!</div>
+        }
         }
     
     }
