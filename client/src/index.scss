@@ -87,7 +87,6 @@ footer {
   right: 0;
   bottom: 0;
   width: 100%;
-
 }
 
 @media (prefers-color-scheme: light) {
@@ -113,25 +112,15 @@ img {
 
 
 .Footer {
-  position: fixed;
-  bottom: 0;
   width: 100%;
-
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // // height: 200px;
-  // background-color: #242424;
-  // color: white;
-  // font-size: 20px;
-  // font-weight: 500;
-  // font-family: inherit;
-  // text-align: center;
-  // // padding: 20px;
-  // border: white 1px solid;
   &_Div {
     &_Left {
+
       width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
     }
 
     &_Right {
@@ -382,5 +371,32 @@ img {
         background-color: #4046b7;
       }
     }
+  }
+}
+.post{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 4%;
+  &_body {
+    cursor: pointer;
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: #646cff;
+    font-size: 1.2em;
+    font-weight: 500;
+    font-family: inherit;
+    border: 1px solid #646cff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 #646cff;
+    transition:  transform 200ms ease-in color;
+  &:hover {
+    transform: scale(1.02);
+  }
+    
   }
 }

@@ -14,6 +14,10 @@ const resolvers = {
                 throw error; // Re-throw the error to propagate it to the GraphQL client
             }
         },
+        build: async (parent, { buildId }) => {
+            console.log(buildId);
+            return Build.findOne({ _id: buildId });
+        }
     },
     Mutation: {
         login: async (parent, { email, password }) => {
@@ -40,7 +44,17 @@ const resolvers = {
         addBuild: async (parent, args) => {
             return Build.create(args);
         },
+        editBuild: async (parent, args) => {
+            return Build.findByIdAndUpdate(
+                args._id,
+                { $set: { ...args } },
+                { new: true }
+            );
+        },
+        removeBuild: async (parent, { buildId }) => {
+            return Build.findByIdAndDelete(buildId);
     },
+    }
 };
 
 module.exports = resolvers;

@@ -47,6 +47,7 @@ export default function Header() {
           <button onClick={()=>{window.location.href = "./Build/Create"}}>New Post</button>
           <button onClick={handleLogOut}>Sign Out</button>
         </div>
+        <button onClick={()=>{window.location.href = "./Aboutus"}}>About Us</button>
       </header>
     );
   }

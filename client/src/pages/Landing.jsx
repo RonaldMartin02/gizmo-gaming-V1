@@ -8,8 +8,8 @@ export default function Landing() {
         fetchPolicy: "no-cache"
     }
     );
-    const posts = data?.builds || [];
-    console.log(posts);
+    const posts = data?.builds;
+    // console.log(posts);
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -24,13 +24,11 @@ export default function Landing() {
     }
     return (
         //future development 
-        <div>
-            <div className='single-project'>
+        <div className='post'>
+            {posts.map((post, index) => (
 
-                {posts.map((post, index) => (
-                    <Post title={post.title} game={post.game} description={post.body} key={index} />
-                ))}
-            </div>
+                <Post title={post.title} game={post.game} description={post.body} _id={post._id} key={index} />
+            ))}
         </div>
     );
 }
