@@ -15,13 +15,10 @@ import { REMOVE_BUILD } from '../utils/mutations';
 export default function Build() {
 
     const { buildId } = useParams();
-    console.log(buildId);
     const { loading, data } = useQuery(GET_BUILD, {
         variables: { buildId: buildId },
     });
-    console.log(data);
     const build = data?.build || {};
-    console.log(build);
     const [removeBuild, { error }] = useMutation(REMOVE_BUILD,
         {
             refetchQueries:
@@ -40,7 +37,6 @@ export default function Build() {
                     buildId: buildId
                 },
             });
-            console.log(data);
             window.location.href = "/"
         } catch (err) {
             console.error(err);
@@ -57,11 +53,11 @@ export default function Build() {
         }
         else {
             if (build.username === Auth.getProfile().data.username) {
-                console.log('This is your post');
+                
                 return (
-                    <div>
-                        <button onClick={() => { window.location.href = `./Edit/${buildId}` }}>Edit</button>
-                        <button onClick={handleDelete}>Delete</button>
+                    <div className='Build_Btns'>
+                        <button className='Build_Btns_Edit' onClick={() => { window.location.href = `./Edit/${buildId}` }}>Edit</button>
+                        <button className='Build_Btns_Delete' onClick={handleDelete}>Delete</button>
                     </div>
                 );
             }
@@ -71,10 +67,10 @@ export default function Build() {
     return (
         <div className='Build'>
             <h1 className='Build_Title'>
-                {build.title}
+                {build.title} 
                 <span className='Build_User'>
-                    {build.username}
-                </span>
+                    ( {build.username} )
+                                    </span>
             </h1>
             <p className='Build_Game'>{build.game}</p>
             <p className='Build_Body'>{build.body}</p>

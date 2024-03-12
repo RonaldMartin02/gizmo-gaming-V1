@@ -1,9 +1,15 @@
 import { useState } from 'react';
 import Auth from '../utils/auth';
 import { useLocation } from 'react-router-dom';
+import './scss/LoggedInHeader.scss';
 
 export default function Header() {
   const [searchTerm, setsearchTerm] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  }
   const handleLogOut = () => {
     Auth.logout()
   }
@@ -21,10 +27,11 @@ export default function Header() {
   };
 
   const currentPage = useLocation().pathname;
+
   if (currentPage === "/Build/Create") {
     return (
       <header className='Header'>
-        <div className='Header_Search' />
+        <div className='Header_Search'/>
         <div className='Header_GizmoGaming' onClick={() => { window.location.href = "/" }}>Gizmo Gaming</div>
         <div className='Header_Btns'>          
           <button onClick={() => { window.location.href = "/" }}>Home</button>
@@ -38,6 +45,7 @@ export default function Header() {
       <header className='Header'>
         <div className='Header_Search'>
           <input
+          className='Header_Search_Input'
             type="text"
             value={searchTerm}
             onChange={handleChange}
