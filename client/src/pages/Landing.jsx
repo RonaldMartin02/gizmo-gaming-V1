@@ -8,7 +8,7 @@ export default function Landing() {
         fetchPolicy: "no-cache"
     }
     );
-    const posts = data?.builds;
+    const posts = data?.builds || [];
     // console.log(posts);
     if (loading) {
         return <div>Loading...</div>;
