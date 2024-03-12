@@ -7,9 +7,7 @@ import { useQuery, useMutation } from '@apollo/client';
 import Comment from '../components/Comment';
 
 import { GET_BUILD } from '../utils/queries';
-
-
-
+import { REMOVE_BUILD } from '../utils/mutations';
 
 // 
 export default function Build() {
@@ -22,6 +20,30 @@ export default function Build() {
     console.log(data);
     const build = data?.build || {};
     console.log(build);
+    const [removeBuild, { error }] = useMutation(REMOVE_BUILD,
+        {
+            refetchQueries:
+                [
+                    GET_BUILD,
+                    'getBuild'
+                ]
+        });
+
+        const handleDelete = async (event) => {
+            // event.preventDefault();
+            console.log('delete');
+            try {
+                const { data } = await removeBuild({
+                    variables: {
+                        buildId: buildId
+                    },
+                });
+                console.log(data);
+                window.location.href = "/"
+            } catch (err) {
+                console.error(err);
+            }
+        }
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -31,8 +53,8 @@ export default function Build() {
             console.log('This is your post');
             return (
                 <div>
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    <button onClick={()=>{window.location.href=`./Edit/${buildId}`}}>Edit</button>
+                    <button onClick={handleDelete}>Delete</button>
                 </div>
             );
         }
