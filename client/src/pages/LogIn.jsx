@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import { useMutation } from '@apollo/client'
 import { LOGIN_USER } from '../utils/mutations'
+import './scss/Login.scss';
 
 import Auth from '../utils/auth';
 

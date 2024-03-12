@@ -1,0 +1,66 @@
+// footer {
+
+//   }
+  
+  .Footer {    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    color: #646cff;
+    font-size: 1.2em;
+    font-weight: 500;
+    font-family: inherit;
+    border-top: 1px solid #646cff;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    &_Div{
+        &_Left{
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 100px;
+        }
+        &_Right{
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &_Name{
+        font-size: 30px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    &_Logo{
+        color: #646cff;
+        
+        text-decoration: none;
+        border-radius: 50%;
+        padding: 10px;
+    :hover {
+      color: #535bf2;
+    }
+  }
+}
+@media (max-width: 768px) {
+    .Footer {
+        flex-direction: row;
+        align-items: center;
+        &_Div {
+        &_Left {
+            margin-left: 30px;
+        }
+       
+            // margin-top: 10px;
+        }
+        &_Logo{
+            :hover {
+                color: #535bf2;
+              }
+        }
+    
+    }
+}

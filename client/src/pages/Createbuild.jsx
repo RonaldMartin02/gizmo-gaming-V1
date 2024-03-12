@@ -5,6 +5,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_BUILD } from '../utils/mutations';
 import { GET_ALL_BUILDS } from '../utils/queries';
 
+import './scss/Createbuild.scss';
 import Auth from '../utils/auth';
 
 export default function Createbuild() {
@@ -63,7 +64,7 @@ export default function Createbuild() {
     }
 
     return (
-        <div>
+        <div className='Submit'>
             <h1>Share your Build!</h1>
 
             {Auth.loggedIn() ? (
@@ -81,7 +82,7 @@ export default function Createbuild() {
                         id='game'
                         className='Submit_form_game'
                         onChange={handleChange} >
-                        <option value="" selected="selected" disabled>Select a game</option >
+                        <option value="">Select a game</option >
                         <option value='World of Warcraft'>World of Warcraft</option>
                         <option value='League of Legends'>League of Legends</option>
                         <option value='Halo'>Halo</option>

@@ -1,0 +1,38 @@
+.posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 150px;
+}
+.post {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    width: 70%;
+  
+    &_body {
+      cursor: pointer;
+      width: 100%;
+      margin: 1%;
+      padding: 20px;
+      background-color: #1a1a1a;
+      color: #646cff;
+      font-size: 1.2em;
+      font-weight: 500;
+      font-family: inherit;
+      border: 1px solid #646cff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px 0 #646cff;
+      transition: transform 200ms ease-in color;
+  
+      &:hover {
+        transform: scale(1.02);
+      }
+  
+    }
+  }
+  

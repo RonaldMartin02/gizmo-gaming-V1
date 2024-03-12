@@ -31,21 +31,11 @@ export default function Search() {
     const filteredPosts = handleSearch();
 
     return (
-        <div>
-            {/* <div className='search-bar'>
-                <input
-                    type="text"
-                    placeholder="Search by game..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
-                <button onClick={handleSearch}>Search</button>
-            </div> */}
-            <div className='single-project'>
+        
+            <div className='posts'>
                 {filteredPosts.map((post, index) => (
                     <Post _id={post._id} title={post.title} game={post.game} description={post.body} key={index} />
                 ))}
             </div>
-        </div>
     );
 }
