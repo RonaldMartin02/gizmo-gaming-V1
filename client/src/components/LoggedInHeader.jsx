@@ -52,8 +52,9 @@ export default function Header() {
         <header className='Header'>
           
           <div className='Header_Search' />
+          <div className='Header_GizmoGaming' onClick={() => { window.location.href = "/" }}>Gizmo Gaming</div>
           <div className='Header_Nav' >
-            <h1 className='Header_GizmoGaming'  onClick={() => { window.location.href = "/" }}>Gizmo Gaming</h1>
+            <div className='Header_NavGizmoGaming' onClick={() => { window.location.href = "/" }}>Gizmo Gaming</div>
           <button onClick={toggleMenu} className="menu-button">
           &#9776; {/* Hamburger Icon */}
         </button>

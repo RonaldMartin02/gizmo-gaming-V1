@@ -7,6 +7,8 @@ export const GET_ALL_BUILDS = gql`
         title
         body
         game
+        username
+        # postDate
         }
     }
     `;
@@ -19,6 +21,7 @@ query Build($buildId: ID!) {
     title
     game
     username
+    # postDate
   }
 }
 `;

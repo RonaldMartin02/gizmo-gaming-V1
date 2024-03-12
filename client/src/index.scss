@@ -164,21 +164,27 @@ img {
 @media (max-width: 768px) {
   .Header {
     font-size: 1rem;
+    &_Nav {
+      align-items: center;
+      justify-content: start;
+    }
     &_GizmoGaming {
-      font-size: 1rem;
+      font-size: 1.6rem;
+      width: auto;
+      margin: 0% 0% 2% 6%;
     }
     & button {
       font-size: 0.8rem;
     }
+    &_Search {
+      align-items: center;
+      justify-content: center;
+    }
     &_Search input {
       font-size: 0.8rem;
       height: 15px;
-      width: 75px;
+      width: 1000%;
     }
-    &_Search_Btn {
-      display: none;
-    }
-
   }
 
   .Footer {
