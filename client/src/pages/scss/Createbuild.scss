@@ -78,3 +78,40 @@
       }
     }
   }
+
+  @media (max-width: 768px) {
+    .Submit {
+      width: 90%;
+      & h1 {
+        font-size: 1.8rem;
+      }
+      &_form {
+        width: 90%;
+        &_title {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    input {
+      width: 100%;
+      padding: 1px 2px;
+      font-size: smaller;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #646cff;
+      border-radius: 4px;
+      box-sizing: border-box;
+    
+    }
+
+    .Header {
+      &_GizmoGaming {
+  margin: 0% 0%;
+    }
+    &_Nav {
+    align-items: center;
+    justify-content: center;
+    }
+  }
+}

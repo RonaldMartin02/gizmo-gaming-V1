@@ -44,3 +44,10 @@
     }
   }
   
+  @media (max-width: 768px) {
+    .login {
+      &_card {
+        width: 90%;
+      }
+    }
+  }
