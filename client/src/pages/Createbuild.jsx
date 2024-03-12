@@ -24,7 +24,7 @@ export default function Createbuild() {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-console.log(postTitle, postText, postGame, Auth.getProfile().data.username);
+        console.log(postTitle, postText, postGame, Auth.getProfile().data.username);
         try {
             const { data } = await addBuild({
                 variables: {
@@ -38,7 +38,7 @@ console.log(postTitle, postText, postGame, Auth.getProfile().data.username);
             console.log(data);
 
             setPostText('');
-            window.location.href="/"
+            window.location.href = "/"
 
 
         } catch (err) {
@@ -52,14 +52,14 @@ console.log(postTitle, postText, postGame, Auth.getProfile().data.username);
         if (name === 'postTitle') {
             setPostTitle(value);
         } else if (name === 'postText' && value.length <= 280) {
-                setPostText(value);
-                setCharacterCount(value.length);
-            } else if (name === 'game') {
-                setGame(value);
-            }
-            // else if (name === 'genre') {
-            //     setGenre(value);
-            // }
+            setPostText(value);
+            setCharacterCount(value.length);
+        } else if (name === 'game') {
+            setGame(value);
+        }
+        // else if (name === 'genre') {
+        //     setGenre(value);
+        // }
     }
 
     return (
@@ -82,10 +82,10 @@ console.log(postTitle, postText, postGame, Auth.getProfile().data.username);
                         className='Submit_form_game'
                         onChange={handleChange} >
                         <option value="">Select a game</option>
-                        <option value='game1'>World of Warcraft</option>
-                        <option value='game2'>League of Legends</option>
-                        <option value='game3'>Halo</option>
-                        <option value='game4'>Overwatch</option>
+                        <option value='World of Warcraft'>World of Warcraft</option>
+                        <option value='League of Legends'>League of Legends</option>
+                        <option value='Halo'>Halo</option>
+                        <option value='Overwatch'>Overwatch</option>
                     </select>
 
                     {/* <select
@@ -94,10 +94,10 @@ console.log(postTitle, postText, postGame, Auth.getProfile().data.username);
                             className='Submit_form_genre'
                             onChange={handleChange} >
                             <option value="" disabled hidden>Select a genre</option>
-                            <option value='genre1'>RPG</option>
-                            <option value='genre2'>MOBA</option>
-                            <option value='genre3'>FPS</option>
-                            <option value='genre4'>RTS</option>
+                            <option value='RPG'>RPG</option>
+                            <option value='MOBA'>MOBA</option>
+                            <option value='FPS'>FPS</option>
+                            <option value='RTS'>RTS</option>
                         </select> */}
 
                     <textarea
