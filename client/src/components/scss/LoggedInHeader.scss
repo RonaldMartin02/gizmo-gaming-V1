@@ -100,7 +100,12 @@
                 width: 100%;
             }
             &_Btn {
-                width: 100%;
+              font-size: 1em;
+              font-weight: 600;
+              padding: 0.2em 0.5em;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
             }
         }
         &_Btns {

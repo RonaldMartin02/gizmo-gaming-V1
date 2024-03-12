@@ -36,6 +36,7 @@ export default function Header() {
 
   if (currentPage === "/Build/Create") {
     if (!matches) {
+      console.log("rendering create build header")
       return (
         <header className='Header'>
           <div className='Header_Search' />
@@ -48,6 +49,7 @@ export default function Header() {
         </header>
       );
     } else {
+      console.log("rendering create build header in mobile view")
       return (
         <header className='Header'>
           
@@ -76,6 +78,8 @@ export default function Header() {
       );
     }
   } else { if (!matches) {
+
+    console.log("rendering logged in header");
     return (
       <header className='Header'>
         <div className='Header_Search'>
@@ -88,6 +92,9 @@ export default function Header() {
           />
           <button className='Header_Search_Btn' onClick={handleSearch}>Search</button>
         </div>
+        <div className='Header_GizmoGaming'  onClick={() => { window.location.href = "/" }}>
+            Gizmo Gaming
+            </div>
         <div className='Header_Btns'>
           <button onClick={() => { window.location.href = "/Build/Create" }}>New Post</button>
           <button onClick={handleLogOut}>Sign Out</button>
@@ -97,6 +104,7 @@ export default function Header() {
     );
   }
   else {
+    console.log("rendering logged in header in mobile view");
     return (
       <header className='Header'>
        <div className='Header_Nav' >
