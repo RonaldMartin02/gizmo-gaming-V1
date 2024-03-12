@@ -1,15 +1,23 @@
+
+$background-color: #1a1a1a;
+$text-color: #DAE3E5;
+$primary-color: #507DBC;
+$secondary-color: #A1C6EA;
+$tertiary-color: #BBD1EA;
+$font-size: 1.2em;
 .Header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 2% 2em;
-    background-color: #1a1a1a;
-    color: #646cff;
+    background-color: $background-color;
+    // color: $primary-color;
+    color: $primary-color;
     font-size: 1.2em;
     font-weight: 500;
     font-family: inherit;
-    border-bottom: 1px solid #646cff;
+    border-bottom: 1px solid $primary-color;
     max-height: 10%;
   
     &_Search {
@@ -24,8 +32,8 @@
         font-weight: 500;
         font-family: inherit;
         background-color: #1a1a1a;
-        color: #646cff;
-        border: 1px solid #646cff;
+        color: $primary-color;
+        border: 1px solid $primary-color;
         border-radius: 8px;
         transition: border-color 0.25s;
       }

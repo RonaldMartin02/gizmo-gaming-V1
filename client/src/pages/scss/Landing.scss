@@ -1,3 +1,9 @@
+$background-color: #1a1a1a;
+$text-color: #DAE3E5;
+$primary-color: #507DBC;
+$secondary-color: #A1C6EA;
+$tertiary-color: #BBD1EA;
+$font-size: 1.2em;
 .posts {
   display: flex;
   flex-direction: column;
@@ -21,13 +27,13 @@
     margin: 1%;
     padding: 20px;
     background-color: #1a1a1a;
-    color: #646cff;
+    color: $text-color;
     font-size: 1.2em;
     font-weight: 500;
     font-family: inherit;
-    border: 1px solid #646cff;
+    border: 1px solid $secondary-color;
     border-radius: 10px;
-    box-shadow: 0 0 10px 0 #646cff;
+    box-shadow: 0 0 10px 0 $primary-color;
     transition: transform 200ms ease-in color;
 
     &:hover {
