@@ -1,0 +1,17 @@
+.Build {
+    margin-top: 4%;
+    border: 1px solid #646cff;
+
+    // width: 70%;
+    // justify-content: center;
+    // align-items: center;
+    &_Title {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    &_User{
+        font-size: 10px;
+    }
+    &_Game{}
+    &_Body{}
+}

@@ -10,6 +10,9 @@ export default function Landing() {
     );
     const posts = data?.builds || [];
     // console.log(posts);
+    posts.reverse();
+
+
     if (loading) {
         return <div>Loading...</div>;
     }
