@@ -60,7 +60,7 @@ const buildSchema = new Schema({
   },
   buildGenre: {
     type: String,
-    required: true
+    required: false
   },
   postDate: {
     type: Date,

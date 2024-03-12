@@ -1,5 +1,5 @@
-const db = require('../config/connection');
-const { Build } = require('../models');
+const db = require('../../config/connection');
+const { Build } = require('../../models');
 const buildSeeds = require('./buildSeeds.json');
 const cleanDB = require('./cleanDB');
 
