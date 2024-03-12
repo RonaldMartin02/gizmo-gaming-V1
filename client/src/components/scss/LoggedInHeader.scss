@@ -17,14 +17,16 @@ $font-size: 1.2em;
     font-size: 1.2em;
     font-weight: 500;
     font-family: inherit;
-    border-bottom: 1px solid $primary-color;
-    max-height: 10%;
+    border-bottom: 1px solid #646cff;
+    margin-bottom: auto;
+
   
     &_Search {
       display: flex;
       flex-direction: row;
       align-items: center;
       width: 20%;
+      padding-top: 10px;
       &_Input {
         width: 100%;
         padding: 0.6em 1.2em;

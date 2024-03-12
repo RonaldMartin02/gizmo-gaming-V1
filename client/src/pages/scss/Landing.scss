@@ -48,3 +48,32 @@ $font-size: 1.2em;
     padding-top: 1%;
   }
 }
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.6rem;
+    line-height: 1.1;
+    margin: auto;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    line-height: 1.1;
+    margin: 4%;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.1;
+    margin: 4% 4% 0% 4%;
+  }
+
+  .post_body {
+    padding: 5px;
+  }
+  .posts {
+    &_post {
+      width: 90%;
+    }
+  }
+}

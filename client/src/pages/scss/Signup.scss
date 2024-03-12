@@ -41,7 +41,13 @@
           border: 1px solid #535bf2;
         }
       }
+    }  
+  }
+
+  @media (max-width: 768px) {
+    .signup {
+      &_card {
+        width: 90%;
+      }
     }
-  
-  
   }

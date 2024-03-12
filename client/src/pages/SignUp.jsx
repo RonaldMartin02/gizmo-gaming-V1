@@ -86,8 +86,8 @@ const Signup = () => {
             </div>
           )}
         </div>
-      </div>
-      <Link to='/login'>Already have an account? Login here.</Link>
+      </div>Already have an account?
+      <Link to='/login'>Login here.</Link>
     </div>
   );
 };

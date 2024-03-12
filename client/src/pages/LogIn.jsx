@@ -66,7 +66,7 @@ const LogIn = () => {
             </div>
           )}
         </div>
-      </div>
+      </div>Need  to create an account?
       <Link to='/signup'>Create a new account.</Link> 
     </div>
     }
