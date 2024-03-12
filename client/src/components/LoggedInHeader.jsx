@@ -63,7 +63,7 @@ export default function Header() {
           </div>
           <div className='Header_Btns'>
         {isOpen && (
-          <div className="menu-items">
+          <div className="Header_Hamburger_Items">
             <button onClick={() => { window.location.href = '/' }}>Home</button>
             <button onClick={handleLogOut}>Sign Out</button>
             <button onClick={() => { window.location.href = '/Aboutus' }}>About Us</button>
