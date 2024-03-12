@@ -6,6 +6,7 @@ import { EDIT_BUILD } from '../utils/mutations';
 import { GET_BUILD } from '../utils/queries';
 import { useParams } from 'react-router-dom';
 import Auth from '../utils/auth';
+import './scss/Editbuild.scss';
 export default function Createbuild() {
     const { buildId } = useParams();
     const { loading, data } = useQuery(GET_BUILD, {
@@ -65,7 +66,7 @@ export default function Createbuild() {
 
         if (name === 'postTitle') {
             setPostTitle(value);
-        } else if (name === 'postText' && value.length <= 280) {
+        } else if (name === 'postText' && value.length <= 580) {
             setPostText(value);
             setCharacterCount(value.length);
         } else if (name === 'game') {
@@ -77,7 +78,7 @@ export default function Createbuild() {
     }
     // handleEdit();
     return (
-        <div>
+        <div className='Submit'>
             <h1>Share your Build!</h1>
 
             {Auth.loggedIn() ? (
@@ -114,9 +115,9 @@ export default function Createbuild() {
                         required />
                     <div className='Submit_form_info'>
                         <p
-                            className={`Submit_form_info_char-count ${characterCount === 280 || error ? 'text-danger' : ''}`}
+                            className={`Submit_form_info_char-count ${characterCount === 580 || error ? 'text-danger' : ''}`}
                         >
-                            Character Count: {characterCount}/280
+                            Character Count: {characterCount}/580
                             {error && <span className='Submit_form_info_text-error'>Something went wrong...</span>}
                         </p>
                     </div>
