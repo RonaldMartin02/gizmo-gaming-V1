@@ -3,6 +3,7 @@ import Post from '../components/Post';
 import { Link } from 'react-router-dom';
 import { GET_ALL_BUILDS } from '../utils/queries.js';
 import './scss/Landing.scss';
+
 export default function Landing() {
     const { loading, data } = useQuery(GET_ALL_BUILDS, {
         fetchPolicy: "no-cache"
@@ -30,7 +31,7 @@ export default function Landing() {
         <div className='posts'>
             {posts.map((post, index) => (
 
-                <Post title={post.title} game={post.game} description={post.body} _id={post._id} key={index} />
+                <Post title={post.title} username={post.username} game={post.game} description={post.body} _id={post._id} key={index} />
             ))}
         </div>
     );

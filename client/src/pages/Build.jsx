@@ -53,7 +53,7 @@ export default function Build() {
         }
         else {
             if (build.username === Auth.getProfile().data.username) {
-                
+
                 return (
                     <div className='Build_Btns'>
                         <button className='Build_Btns_Edit' onClick={() => { window.location.href = `./Edit/${buildId}` }}>Edit</button>
@@ -67,13 +67,13 @@ export default function Build() {
     return (
         <div className='Build'>
             <h1 className='Build_Title'>
-                {build.title} 
-                <span className='Build_User'>
-                    ( {build.username} )
-                                    </span>
+                {build.title}
+                <span className='Build_User'>Posted by: {build.username} {/*at {build.postDate}*/}</span>
             </h1>
-            <p className='Build_Game'>{build.game}</p>
-            <p className='Build_Body'>{build.body}</p>
+            <p className='Build_Game'>Game: {build.game}</p>
+            <div className='Build_Body_Container'>
+            <p className='Build_Body_text'>{build.body}</p>
+            </div>
             {renderButtons()}
         </div>
     );
