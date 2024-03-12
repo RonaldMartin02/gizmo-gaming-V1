@@ -33,17 +33,22 @@ mutation AddBuild($title: String!, $game: String!, $body: String!, $username: St
   }
 }
 `;
-export const ADD_COMMENT = gql`
-mutation addComment($postId: ID!, $commentText: String!) {
-  addComment(postId: $postId, commentText: $commentText) {
+export const EDIT_BUILD = gql`
+mutation EditBuild($id: ID!, $title: String, $game: String, $body: String) {
+  editBuild(_id: $id, title: $title, game: $game, body: $body) {
     _id
-    comments {
-      _id
-      commentText
-      createdAt
-      username
-    }
+    title
+    username
+    game
+    body
   }
 }
 `;
-
+export const REMOVE_BUILD = gql`
+mutation RemoveBuild($buildId: ID!) {
+  removeBuild(buildId: $buildId) {
+    _id
+    title
+  }
+}
+`;

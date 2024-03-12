@@ -13,6 +13,7 @@ import Aboutus from './pages/Aboutus'
 import ErrorPage from './pages/ErrorPage'
 import LogIn from './pages/LogIn';
 import Signup from './pages/SignUp';
+import EditBuild from './pages/EditBuild';
 
 const router = createBrowserRouter(
   [
@@ -39,6 +40,10 @@ const router = createBrowserRouter(
       {
         path: '/Build/Create',
         element: <Createbuild />,
+      },
+      {
+        path: '/Build/Edit/:buildId',
+        element: <EditBuild />,
       },
       {
         path: '/LogIn',
