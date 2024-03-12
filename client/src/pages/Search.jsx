@@ -1,24 +1,22 @@
-import { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import Post from '../components/Post';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { GET_ALL_BUILDS } from '../utils/queries.js';
 
 export default function Search() {
+    const location = useLocation();
+    const lastSegment = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
+    const search = lastSegment.replaceAll("%20", " ");
     const { loading, data } = useQuery(GET_ALL_BUILDS, {
         fetchPolicy: "no-cache"
     });
-    const [searchTerm, setSearchTerm] = useState('');
+
     const posts = data?.builds || [];
 
     const handleSearch = () => {
-        // Perform the search action here
-        // For example, filter posts based on the search term
         const filteredPosts = posts.filter((post) =>
-            post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            post.game.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            post.body.toLowerCase().includes(searchTerm.toLowerCase())
-        );
+            post.game.toLowerCase().includes(search.toLowerCase()));
+
         return filteredPosts;
     };
 
@@ -41,18 +39,18 @@ export default function Search() {
 
     return (
         <div>
-            <div className='search-bar'>
+            {/* <div className='search-bar'>
                 <input
                     type="text"
-                    placeholder="Search by title, game, post user or description"
+                    placeholder="Search by game..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 <button onClick={handleSearch}>Search</button>
-            </div>
+            </div> */}
             <div className='single-project'>
                 {filteredPosts.map((post, index) => (
-                    <Post title={post.title} game={post.game} description={post.body} key={index} />
+                    <Post _id={post._id} title={post.title} game={post.game} description={post.body} key={index} />
                 ))}
             </div>
         </div>
