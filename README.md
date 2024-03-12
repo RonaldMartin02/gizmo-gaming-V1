@@ -17,6 +17,7 @@
   - [Features](#features)
   - [How To Contribute](#how-to-contribute)
   - [Tests](#tests)
+  - [Future Development](#future-development)
   - [License](#license)
   - [Questions](#questions)
   </br>
@@ -35,12 +36,9 @@
   </br>
   </br>
   ## Usage
-  To view the finished product, click this <a href="link">link!</a>
+  To view the finished product, click this <a href="https://gizmo-gaming-055183e9597f.herokuapp.com/">link!</a>
 
-  <!-- Video of it running below:
-  <video src="video.link">Vid</video> -->
-
-To use the application, follow these steps:<br><br>
+To run the application locally, follow these steps:<br><br>
   1. Open your web browser and navigate to `localhost:3001`.<br>
   2. Sign up for an account or log in if you already have one.<br>
   3. Consider creating a profile page complete with a profile picture, a bio, and a list of your favorite games.<br>
@@ -50,7 +48,8 @@ To use the application, follow these steps:<br><br>
   7. Enjoy the application!<br>
 
 
-  ![Examples of application being run.](link-to-image)
+  ![Examples of application being run on PC.](client/src/assets/img/pc-screenshot.png)</br></br>
+  ![Examples of application being run on an iPhone SE.](client/src/assets/img/iphone-screenshot.png)
   </br>
   </br>
   </br>
@@ -68,11 +67,9 @@ To use the application, follow these steps:<br><br>
   - User authentication
   - User profiles
   - Post creation
-  - Post voting
   - Post searching
   - Post filtering
-  - Post commenting
-  - Profile editing
+  - Post editing
   </br>
   </br>
   </br>
@@ -85,6 +82,24 @@ To use the application, follow these steps:<br><br>
   ## Tests
   
   N/A
+  </br>
+  </br>
+  </br>
+  ## Future Development
+
+  - Add a friend system
+  - Add a notification system
+  - Add a game recommendation system
+  - Add a game review system
+  - Add a game rating system
+  - Add a game search system
+  - Add a game tag system
+  - Add a game post tag system
+  - Add a game post vote system
+  - Add a game post comment system
+  - Add a game post report system
+  - Add a game post share system
+  - Add a game post save system
   </br>
   </br>
   </br>
