@@ -10,6 +10,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
 }
 
 a {
@@ -23,11 +24,19 @@ a:hover {
 }
 
 body {
-  margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  flex-direction: column;
   min-height: 100vh;
+  margin: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+main {
+  flex: 1;
 }
 
 h1 {
@@ -75,12 +84,18 @@ button:focus-visible {
   font-family: inherit;
   border-bottom: 1px solid #646cff;
   max-height: 10%;
+  margin-bottom: 2%;
 
   &_Search {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 20%;
+
+    & input {
+      height: 25px;
+      width: 300px;
+    }
   }
 
   &_GizmoGaming {
@@ -91,14 +106,13 @@ button:focus-visible {
     align-items: center;
     border-radius: 8px;
     border: 1px solid transparent;
-    // padding: 0.6em 1.2em;
-    // font-size: 1em;
     font-weight: 500;
     font-family: inherit;
     background-color: #1a1a1a;
     cursor: pointer;
     transition: border-color 0.25s;
   }
+
   &_Btns {
     display: flex;
     flex-direction: row;
@@ -114,6 +128,8 @@ button:focus-visible {
     cursor: pointer;
     display: flex;
     align-items: center;
+    padding: 2% 3%;
+    margin-left: 5%;
   }
 }
 
@@ -128,26 +144,17 @@ footer {
   font-weight: 500;
   font-family: inherit;
   border-top: 1px solid #646cff;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
   width: 100%;
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+  &_Div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
 
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
+  position: fixed;
+  bottom: 0;
 }
 
 img {
@@ -352,6 +359,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    // margin-bottom: 500px;
 
     // width: 50%;
     &_title {
@@ -426,13 +434,13 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  margin-top: 4%;
+  padding: 1%;
+  width: 70%;
 
   &_body {
     cursor: pointer;
-    width: 70%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 1%;
     padding: 20px;
     background-color: #1a1a1a;
     color: #646cff;
@@ -448,5 +456,68 @@ img {
       transform: scale(1.02);
     }
 
+  }
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 220px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+@media (max-width: 768px) {
+  .Header {
+    font-size: 1rem;
+    &_GizmoGaming {
+      font-size: 1rem;
+    }
+    & button {
+      font-size: 0.8rem;
+    }
+    &_Search input {
+      font-size: 0.8rem;
+      height: 15px;
+      width: 75px;
+    }
+    &_Search_Btn {
+      display: none;
+    }
+
+  }
+
+  .Footer {
+    font-size: small;
+
+    &_Name {
+      margin: 2%;
+    }
+
+    &_Div {
+      &_Right {
+        width: 15%;
+      }
+
+      &_Left {
+        width: 85%;
+      }
+    }
   }
 }
