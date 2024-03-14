@@ -34,7 +34,8 @@ body {
   line-height: 1.5;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.87);
-  background-image: url(client/src/assets/img/carbon_fibre.PNG);
+  background-image: url('./assets/img/carbon_fibre.PNG');
+  background-repeat: repeat;
 }
 
 main {
