@@ -5,6 +5,10 @@ $primary-color: #507DBC;
 $secondary-color: #A1C6EA;
 $tertiary-color: #BBD1EA;
 $font-size: 1.2em;
+.menu-items{
+    display: flex;
+    flex-direction: row;
+}
 .menu-button{
   font-size: .5em;
 }
@@ -105,7 +109,10 @@ $font-size: 1.2em;
 
   
 @media (max-width: 1000px) {
-
+    .menu-items{
+        display: flex;
+        flex-direction: row;
+    }
     .Header{
         flex-direction: column;
         align-items: center;
@@ -145,6 +152,10 @@ $font-size: 1.2em;
     }
 }
 @media (max-width: 768px){
+    .menu-items{
+        display: flex;
+        flex-direction: row;
+    }
   .Header{
     &_GizmoGaming {
       font-size: 3rem;
@@ -153,10 +164,15 @@ $font-size: 1.2em;
     }
   }
 }
-@media (max-width: 400px)  {
+@media (max-width: 350px)  {
+    .menu-items{
+        display: flex;
+        flex-direction: row;
+    }
   .Header{
+
     &_GizmoGaming {
-      font-size: 2rem;
+      font-size: 1rem;
       width: auto;
       margin: 0% 0% 2% 6%;
     }

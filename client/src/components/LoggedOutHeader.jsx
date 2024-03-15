@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 // import { Link, useLocation } from 'react-router-dom';
-
-
+import './scss/LoggedOutHeader.scss';
 export default function Header() {
   const [searchTerm, setsearchTerm] = useState('');
    const [matches, setMatches] = useState(window.matchMedia("(max-width: 1000px)").matches);
@@ -46,7 +45,7 @@ export default function Header() {
              <button className='Header_Search_Btn' onClick={handleSearch}>Search</button>
            </div>
          <div className='Header_GizmoGaming' onClick={() => { window.location.href = "/" }}>Gizmo Gaming</div>
-         <div className='Header_Btns'>
+         <div className='menu-items'>
            <button onClick={() => { window.location.href = "/Login" }}>Log In</button>
            <button onClick={() => { window.location.href = "/Signup" }}>Sign Up</button>
            <button onClick={() => { window.location.href = "/Aboutus" }}>About Us</button>
